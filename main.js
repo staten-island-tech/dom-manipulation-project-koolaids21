@@ -1,10 +1,11 @@
 DOMSelectors = {
     //store all related code for selecting elements here
-    form: document.querySelector("#form"),
-    firstName: document.querySelector("first-name"),
-    h2s: document.querySelector("h2"),
+button: document.getElementById("btn")
+input: document.querySelector ('#input')
 };
-DOMSelectors.form.addEventListener("submit", function () {
-  Event.preventDefualt();
-  DOMSelector.h2s.forEach((header)=> header.textContent = DOMSelectors.firstName.value)
+DOMSelectors.button.addEventListener("click", function () {
+  let input = DOMSelectors.input.value;
+  DOMSelectors.box.insertAdjacentHTML("afterend",  <p> ${input} </p> );
 });
+
+
