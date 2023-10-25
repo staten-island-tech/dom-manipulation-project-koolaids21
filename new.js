@@ -1,16 +1,11 @@
-const DOMSelectors = {
-    button: document.getElementById("btn"), 
-    text: document.querySelector("#text"), 
-    box: document.getElementById("big-black-box"),
-    points: document.querySelectorAll(".point"), 
-    null: document.getElementById("point"), 
-    empty: document.querySelector(".nothing"),
-  };
+function generateTable() {
+  // creates a <table> element and a <tbody> element
+  const tbl = document.createElement("table");
+  const tblBody = document.createElement("tbody");
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.body.appendChild(tbl);
+  // sets the border attribute of tbl to '2'
+  tbl.setAttribute("border", "2");}
   
-  console.log(DOMSelectors.box);
-  console.log(DOMSelectors.button);
-  console.log(DOMSelectors.text);
-  console.log(DOMSelectors.points);
-  console.log(DOMSelectors.points[0]);
-  console.log(DOMSelectors.null);
-  console.log(DOMSelectors.nothing);
