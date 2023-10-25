@@ -1,11 +1,23 @@
-DOMSelectors = {
-    //store all related code for selecting elements here
-button: document.getElementById("btn")
-input: document.querySelector ('#input')
+const DOMSelectors = {
+  nameInput: "#name",
+  ageInput: "#age",
 };
-DOMSelectors.button.addEventListener("click", function () {
-  let input = DOMSelectors.input.value;
-  DOMSelectors.box.insertAdjacentHTML("afterend",  <p> ${input} </p> );
-});
 
+function injectfunction() {
+  const formData = gatherFormData();
+  callotherFunctions(formData);
+}
 
+function gatherFormData() {
+  const formData = {};
+
+  formData.name = document.querySelector(DOMSelectors.nameInput).value;
+  formData.age = document.querySelector(DOMSelectors.ageInput).value;
+
+  return formData;
+}
+
+function callotherFunctions(formData) {
+  console.log("Form Data:", formData);
+  // Add your other function calls and logic here
+}
