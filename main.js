@@ -1,5 +1,6 @@
 const DOMSelectors = {
-  nameInput: "#name",
+  button: document.getElementById("btn")
+  nameInput "#name",
   ageInput: "#age",
 };
 
@@ -9,15 +10,14 @@ function injectfunction() {
 }
 
 function gatherFormData() {
-  const formData = {};
+  const data = {};
 
-  formData.name = document.querySelector(DOMSelectors.nameInput).value;
-  formData.age = document.querySelector(DOMSelectors.ageInput).value;
+  data.name = document.querySelector(DOMSelectors.nameInput).value;
+  data.age = document.querySelector(DOMSelectors.ageInput).value;
 
-  return formData;
+  return data;
 }
 
 function callotherFunctions(formData) {
   console.log("Form Data:", formData);
-  // Add your other function calls and logic here
 }
