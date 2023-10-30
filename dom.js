@@ -1,12 +1,12 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("big-black-box"),
-  input: document.querySelector(`#input`),
+  input: document.querySelector("#input"),
 };
 
 DOMSelectors.box.insertAdjacentHTML(
   "beforebegin",
-  `We can add text into an HTML file by writing it in JS!`
+  ``
 );
 
 DOMSelectors.button.addEventListener("click", function () {
@@ -17,18 +17,24 @@ DOMSelectors.button.addEventListener("click", function () {
   DOMSelectors.box.insertAdjacentHTML(
     "beforeend",
     `
-    <p class = 'extra-text'>${input}</p>
+    <div class='extra-text'>
+      <p>${value}</p>
+      <button class='remove-button'>Remove</button>
+    </div>
     `
   );
-});
- 
-
-function remove(){
-  let buttons = document.querySelectorAll("button");
-  buttons.foreach((btn)=> 
-  btn.addEventListener("click', function (event) {
-    console.log(event.target.parentElement.parentElement);
-  })
-  );
+  {
+  nameInput.value = "";
+  ageInput.value = "";
+}  {
+  alert("Please fill in both name and age fields.");
 }
-remove();
+
+  const removeButtons = document.querySelectorAll(".remove-button");
+  removeButtons.forEach((removeButton) => {
+    removeButton.addEventListener("click", function (event) {
+      const objectToRemove = event.target.parentElement;
+      objectToRemove.remove();
+    });
+  });
+});
