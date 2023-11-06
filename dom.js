@@ -17,9 +17,12 @@ DOMSelectors.button.addEventListener("click", function () {
       </div>
       `
     );
-  } 
-   {
-  const element = document.getElementById("remove");
-element.remove();
-}});
+  }
+  {
+    const element = document.querySelector("name");
+    element.remove();
+  }
+
+  document.getElementById=("btn").reset();
+});
 
