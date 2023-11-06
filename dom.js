@@ -2,6 +2,7 @@ const DOMSelectors = {
   button: document.getElementById("btn"),
   box: document.getElementById("big-black-box"),
   input: document.querySelector("#input"),
+  remove: document.querySelector("remove"),
 };
 
 DOMSelectors.button.addEventListener("click", function () {
@@ -11,23 +12,14 @@ DOMSelectors.button.addEventListener("click", function () {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `
-      <div class='extra-text'>
         <p>${value}</p>
         <button class='remove-button'>Remove</button>
       </div>
       `
     );
+  } 
+   {
+  const element = document.getElementById("remove");
+element.remove();
+}});
 
-    DOMSelectors.input.value = ""; // Clear the input field
-  } else {
-    alert("Please fill in the input field.");
-  }
-  
-  const removeButtons = document.querySelectorAll(".remove-button");
-  removeButtons.forEach((removeButton) => {
-    removeButton.addEventListener("click", function (event) {
-      const objectToRemove = event.target.parentElement;
-      objectToRemove.remove();
-    });
-  });
-});
