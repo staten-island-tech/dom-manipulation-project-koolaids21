@@ -1,28 +1,26 @@
 const DOMSelectors = {
   button: document.getElementById("btn"),
+  form: document.querySelector("#myform"),
   box: document.getElementById("big-black-box"),
   input: document.querySelector("#input"),
-  remove: document.querySelector("remove"),
+  remove: document.querySelector("#remove"),
 };
 
 DOMSelectors.button.addEventListener("click", function () {
   let value = DOMSelectors.input.value;
-
-  if (value.trim() !== "") {
+{
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
-      `
-        <p>${value}</p>
-        <button class='remove-button'>Remove</button>
-      </div>
+      `<div class='extra'><p>${value}</p><button class='remove-button'>Remove</button></div>
       `
     );
-  }
-  {
-    const element = document.querySelector("name");
-    element.remove();
-  }
-
-  document.getElementById=("btn").reset();
+    DOMSelectors.input.value = ""; 
+  } 
+  const removeButtons = document.querySelectorAll(".remove-button");
+  removeButtons.forEach((removeButton) => {
+    removeButton.addEventListener("click", function (event) {
+      const objectToRemove = event.target.parentElement;
+      objectToRemove.remove();
+    });
+  });
 });
-
