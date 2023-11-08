@@ -1,32 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const DOMSelectors = {
-    button: document.getElementById("btn"),
-    box: document.getElementById("big-black-box"),
-    input: document.querySelector("#input"),
-    nameInput: "#name", // You were missing a colon
-    ageInput: "#age",    // You were missing a colon
-  };
+const DOMSelectors = {
+  nameInput: "#name",
+  ageInput: "#age",
+};
 
-  // Call the injectFunction when the button is clicked
-  DOMSelectors.button.addEventListener("click", injectFunction);
+function injectfunction() {
+  const formData = gatherFormData();
+  callotherFunctions(formData);
+}
 
-  function injectFunction() {
-    const formData = gatherFormData();
-    callotherFunctions(formData);
-  }
+function gatherFormData() {
+  const formData = {};
 
-  function gatherFormData() {
-    const data = {};
+  formData.name = document.querySelector(DOMSelectors.nameInput).value;
+  formData.age = document.querySelector(DOMSelectors.ageInput).value;
 
-    // Use querySelector to get the input values based on the selectors in DOMSelectors
-    data.name = document.querySelector(DOMSelectors.nameInput).value;
-    data.age = document.querySelector(DOMSelectors.ageInput).value;
+  return formData;
+}
 
-    return data;
-  }
-
-  function callotherFunctions(formData) {
-    console.log("Form Data:", formData);
-  }
-
-});
+function callotherFunctions(formData) {
+  console.log("Form Data:", formData);
+  // Add your other function calls and logic here
+}

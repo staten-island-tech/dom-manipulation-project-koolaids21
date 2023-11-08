@@ -4,20 +4,21 @@ const DOMSelectors = {
   box: document.getElementById("big-black-box"),
   input: document.querySelector("#input"),
   remove: document.querySelector("#remove"),
+  picture: document.querySelector(".pic"),
 };
 
 DOMSelectors.button.addEventListener("click", function () {
-  let value = DOMSelectors.input.value;
-{
+  const value = DOMSelectors.input.value;
+  {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
-      `<div class='extra'><p>${value}</p><button class='remove-button'>Remove</button></div>
+      `<div class='card'><p>${value}</p><button class='remove-button'>Remove</button></div> 
       `
     );
     DOMSelectors.input.value = ""; 
   } 
-  const removeButtons = document.querySelectorAll(".remove-button");
-  removeButtons.forEach((removeButton) => {
+  const removeButton = document.querySelectorAll(".remove-button");
+  removeButton.forEach((removeButton) => {
     removeButton.addEventListener("click", function (event) {
       const objectToRemove = event.target.parentElement;
       objectToRemove.remove();
